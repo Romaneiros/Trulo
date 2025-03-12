@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@font-face {
+  font-family: Cartograph CF, sans-serif;
+  src: url('./src/CartographCF-BoldItalic.otf') format('opentype');
+  font-weight: bold;
+  font-style: italic;
+       
+}
+@import "tailwindcss";
+
+@theme {
+    --font-mont: Montserrat, sans-serif; 
+    --font-cart: Cartograph CF, sans-serif;
+    
+  }
+
+  @layer utilities {
+    .text-shadow {
+        text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.35);
+      }
+  }
+
+  @layer components {
+    .card {
+        @apply my-2 leading-snug bg-white border-b border-b-gray-400 cursor-pointer rounded shadow-md shadow-gray-400;
+    
+      }
+    
+      .card:hover {
+        @apply bg-gray-100;
+        @apply translate-x-1 translate-y-1;
+        @apply transition-transform duration-200 ease-in-out;
+      }
+
+      .card:focus {
+        @apply bg-gray-100;
+        @apply translate-x-1 translate-y-1;
+        @apply transition-transform duration-200 ease-in-out;
+      }
+    
+      .list {
+        @apply flex-shrink-0;
+        @apply w-full mb-10 p-3 pb-2;
+        @apply bg-gray-200 text-gray-800;
+        @apply rounded-lg shadow-xl shadow-purple-800;
+      }
+
+      .btn {
+        @apply font-semibold text-white border-b border-gray-600 py-1 px-3 rounded shadow mt-2;
+      }
+      .btn-green {
+        @apply bg-green-500;
+      }
+      .btn:hover {
+        @apply bg-green-400;        
+      }
+  }
+
+  @media (min-width: 640px) {
+      .list {
+        @apply w-80 mx-4 mb-0;
+      }
+    }
